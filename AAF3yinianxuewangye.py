@@ -13,7 +13,7 @@ import shap
 import matplotlib
 
 
-model_path = r'C:\Users\zhao.jingxuan\pythonProject\3011\af3model_SVM1.pkl'
+model_path = 'af3model_SVM1.pkl'
 model = joblib.load(model_path)
 import os
 
@@ -26,7 +26,7 @@ feature_names = [
 
 # Streamlit 名字
 st.title("Heart Disease Predictor")
-model_path1 = r'C:\Users\zhao.jingxuan\pythonProject\3011\af3min_max_scaler9.pkl'
+model_path1 = 'af3min_max_scaler9.pkl'
 min_max_scaler = joblib.load(model_path1 )
 # User inputs
 import streamlit as st
@@ -56,7 +56,7 @@ features_scaled = np.array([feature_values])
 # 使用加载的 MinMaxScaler 对用户输入的数据进行归一化
 features = min_max_scaler.transform(features_scaled)
 # Load background data for SHAP
-background_data_path =  r'C:\Users\zhao.jingxuan\pythonProject\3011\train_sample_50af3.csv'
+background_data_path =  'train_sample_50af3.csv'
 background_data = pd.read_csv(background_data_path)
 
 # 确保选择特定的列进行缩放
