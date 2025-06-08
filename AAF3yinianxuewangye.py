@@ -30,7 +30,7 @@ model_path1 = 'af3min_max_scaler9.pkl'
 min_max_scaler = joblib.load(model_path1 )
 # User inputs
 import streamlit as st
-Agegroup80 = st.radio("Agegroup80:", (0, 1))
+Agegroup80 = st.radio("Age over 80 years:", (0, 1))
 glucose = st.number_input("Glucose:", min_value=0.0, max_value=50.0, value=10.0)
 HDL = st.number_input("HDL:", min_value=0.1, max_value=3.0, value=1.0)
 albumin = st.number_input("Albumin:", min_value=20.0, max_value=60.0, value=30.0)
@@ -43,10 +43,10 @@ CRP = st.number_input("CRP:", min_value=0.0, max_value=50.0, value=20.0)
 Na = st.number_input("Na+:", min_value=0.0, max_value=200.0, value=100.0)
 Ka = st.number_input("Ka+:", min_value=0.0, max_value=10.0, value=1.0)
 P = st.number_input("P+:", min_value=0.0, max_value=10.0, value=2.0)
+cMDRD_eGRR = st.number_input("cMDRD.eGRR:", min_value=0.0, max_value=200.0, value=100.0)
 IVS = st.number_input("IVST:", min_value=6.0, max_value=16.0, value=8.0)
 LVMI = st.number_input("LVMI:", min_value=0.0, max_value=100.0, value=30.0)
 CHF3 = st.radio("CHF:", (0, 1))
-cMDRD_eGRR = st.number_input("cMDRD.eGRR:", min_value=0.0, max_value=200.0, value=100.0)
 
 
 # Process inputs and make predictions
